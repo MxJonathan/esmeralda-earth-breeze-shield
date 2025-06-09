@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breeze Shield - Repelente Natural de Mosquitos | Esmeralda Earth</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2e8b57; /* Verde esmeralda oscuro */
+            --secondary-color: #3cb371; /* Verde medio */
+            --light-green: #90ee90; /* Verde claro */
+            --very-light-green: #f0fdf4; /* Verde muy claro */
+            --text-dark: #333;
+            --text-medium: #555;
+            --text-light: #666;
+            --box-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --box-shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.12);
+            --border-radius: 10px;
+        }
+
+        /* Estilos Generales */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--very-light-green);
+            color: var(--text-dark);
+            line-height: 1.6;
+            scroll-behavior: smooth; /* Desplazamiento suave para anclas */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky; /* Sticky header */
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--box-shadow-medium);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none; /* Asegura que el logo sea un enlace limpio */
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 50%; /* Opcional: logo redondo */
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2em;
+            color: var(--very-light-green);
+            letter-spacing: -0.5px;
+        }
+
+        /* Navegación (Menú) */
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+            position: relative; /* Para el efecto de subrayado */
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: white;
+            transition: width 0.3s ease-out;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Contenido de Páginas */
+        .page-section {
+            display: none;
+            background-color: white;
+            padding: 50px;
+            margin-top: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-medium);
+            text-align: left;
+            opacity: 0; /* Para la animación de fade-in */
+            transform: translateY(20px); /* Para la animación de slide-up */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .page-section.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .page-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-size: 2.8em;
+            text-align: center;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .page-section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .page-section p, .page-section ul, .page-section ol {
+            font-size: 1.1em;
+            color: var(--text-medium);
+            margin-bottom: 15px;
+        }
+
+        .page-section ul, .page-section ol {
+            list-style: disc inside;
+            padding-left: 20px;
+        }
+
+        .page-section ul li, .page-section ol li {
+            margin-bottom: 8px;
+        }
+
+        /* Estilos específicos para la sección Hero (Portada) */
+        .hero {
+            background: linear-gradient(135deg, var(--light-green), #d4edda); /* Gradiente suave */
+            padding: 80px 20px;
+            margin-bottom: 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--box-shadow-medium);
+            animation: fadeInScale 1s ease-out;
+        }
+
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .hero h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.8em;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            color: var(--text-dark);
+            max-width: 900px;
+            margin: 0 auto 40px auto;
+            font-weight: 300;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 550px;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+            margin-top: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 18px 35px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Características (en la página de inicio) */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            justify-content: center;
+        }
+
+        .feature-item {
+            background-color: white;
+            padding: 35px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-light);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--box-shadow-medium);
+        }
+
+        .feature-item h3 {
+            color: var(--primary-color);
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 0;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .feature-item p {
+            color: var(--text-medium);
+            font-size: 1em;
+        }
+
+        /* Testimonios (en la página de inicio) */
+        .testimonials {
+            background-color: #e6ffe6; /* Verde muy claro */
+            padding: 60px 20px;
+            margin-top: 60px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-light);
+        }
+
+        .testimonials h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            font-size: 2.8em;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            margin: 25px auto;
+            max-width: 700px;
+            text-align: center;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: var(--text-dark);
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card .author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 10px;
+            display: block;
+            font-size: 1em;
+        }
+
+        /* Estilos específicos para Productos */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+
+        .product-card {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--box-shadow-light);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 380px;
+            margin: 0 auto;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--box-shadow-medium);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: 220px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); /* Sombra suave para la imagen */
+        }
+
+        .product-card h3 {
+            color: var(--primary-color);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2em;
+            margin-bottom: 12px;
+        }
+
+        .product-card .price {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #4CAF50; /* Un verde vibrante para el precio */
+            margin-bottom: 20px;
+        }
+
+        .product-card .description {
+            font-size: 1em;
+            color: var(--text-medium);
+            margin-bottom: 25px;
+        }
+
+        .btn-add-to-cart {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-add-to-cart:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Estilos específicos para Beneficios */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background-color: #e6ffe6;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-light);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #d4edda;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--box-shadow-medium);
+        }
+
+        .benefit-card img {
+            height: 70px;
+            margin-bottom: 18px;
+            filter: drop-shadow(0 3px 6px rgba(0,0,0,0.1));
+        }
+
+        .benefit-card h3 {
+            color: var(--primary-color);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            margin-bottom: 12px;
+        }
+
+        .benefit-card p {
+            color: var(--text-medium);
+            font-size: 1em;
+        }
+
+        /* Estilos específicos para Contacto */
+        .contact-info {
+            margin-top: 30px;
+            font-size: 1.1em;
+            color: var(--text-medium);
+        }
+
+        .contact-info p {
+            margin-bottom: 12px;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .contact-info a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-light);
+        }
+
+        .contact-form label {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            display: block;
+            text-align: left;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-form input[type="text"]:focus,
+        .contact-form input[type="email"]:focus,
+        .contact-form textarea:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(60, 179, 113, 0.2);
+            outline: none;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-form button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 16px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-form button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Estilos para la sección de Comentarios */
+        .comment-form {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 25px;
+            background-color: #f9f9f9;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-light);
+        }
+
+        .comment-form label {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            display: block;
+            text-align: left;
+        }
+
+        .comment-form input[type="text"],
+        .comment-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+
+        .comment-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .comment-form button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .comment-form button:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .comments-list {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .comments-list h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-size: 1.8em;
+        }
+
+        .comment-card {
+            background-color: #e6ffe6;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+            margin-bottom: 18px;
+            text-align: left;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            border-left: 4px solid var(--light-green);
+        }
+
+        .comment-card .comment-author {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+
+        .comment-card .comment-text {
+            color: var(--text-medium);
+            font-size: 1em;
+        }
+
+        /* Estilos para la sección de video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 = 0.5625) */
+            height: 0;
+            overflow: hidden;
+            max-width: 800px; /* Limita el ancho máximo del video */
+            margin: 30px auto; /* Centra el video */
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-medium);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none; /* Elimina el borde del iframe por defecto */
+        }
+
+        /* Sección Sobre Nosotros - Mejoras */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .about-section-block {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-light);
+            text-align: left;
+        }
+
+        .about-section-block h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            font-size: 2em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .about-section-block ul {
+            list-style: none; /* Quitamos los bullets por defecto para un diseño más limpio */
+            padding-left: 0;
+        }
+
+        .about-section-block ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px; /* Espacio para un icono personalizado */
+        }
+
+        .about-section-block ul li::before {
+            content: '🌿'; /* Icono de hoja como bullet */
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-size: 1.1em;
+            top: 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        .team-member-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow-light);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .team-member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-medium);
+        }
+
+        .team-member-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 4px solid var(--light-green);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .team-member-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .team-member-card p {
+            font-size: 0.95em;
+            color: var(--text-medium);
+            line-height: 1.4;
+        }
+
+        .team-member-card .role {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 60px;
+            font-size: 0.95em;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Iconos de Redes Sociales Flotantes */
+        .social-icons-fixed {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            opacity: 0; /* Oculto por defecto */
+            transform: translateX(20px); /* Inicialmente fuera de vista */
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .social-icons-fixed.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .social-icon-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.6em;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .social-icon-link:hover {
+            background-color: var(--primary-color);
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Media Queries para responsividad */
+        @media (max-width: 992px) {
+            .logo h1 {
+                font-size: 2em;
+            }
+            nav ul {
+                gap: 15px;
+            }
+            .page-section {
+                padding: 40px 25px;
+            }
+            .hero h2 {
+                font-size: 3em;
+            }
+            .hero p {
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-bottom: 15px;
+            }
+
+            nav {
+                position: static;
+                width: 100%;
+                margin-top: 15px;
+                transform: none;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .logo {
+                margin-bottom: 15px;
+            }
+
+            .logo h1 {
+                font-size: 1.8em;
+            }
+
+            .page-section h2 {
+                font-size: 2.4em;
+            }
+
+            .hero h2 {
+                font-size: 2.8em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+
+            .features, .product-grid, .benefits-grid, .team-grid {
+                grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+            }
+
+            .feature-item, .product-card, .benefit-card, .team-member-card {
+                max-width: 90%;
+                margin: 0 auto;
+            }
+
+            .btn-primary, .contact-form button, .comment-form button, .btn-add-to-cart {
+                padding: 15px 28px;
+                font-size: 1em;
+            }
+
+            .contact-form, .comment-form {
+                padding: 20px;
+            }
+
+            .social-icons-fixed {
+                bottom: 15px;
+                right: 15px;
+                gap: 10px;
+            }
+            .social-icon-link {
+                width: 45px;
+                height: 45px;
+                font-size: 1.4em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-section {
+                padding: 30px 15px;
+            }
+            .page-section h2 {
+                font-size: 2em;
+            }
+            .hero h2 {
+                font-size: 2.2em;
+            }
+            .hero p {
+                font-size: 0.95em;
+            }
+            .logo h1 {
+                font-size: 1.6em;
+            }
+            nav ul li a {
+                font-size: 0.9em;
+                padding: 6px 12px;
+            }
+            .feature-item h3, .product-card h3, .benefit-card h3 {
+                font-size: 1.5em;
+            }
+            .social-icons-fixed {
+                bottom: 10px;
+                right: 10px;
+                gap: 8px;
+            }
+            .social-icon-link {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#home" class="logo nav-link"> <img src="C:\Users\LENOVO\Documents\mi_sitio_web_breeze_shield\LOGO REPELENTE.jpeg"/50x50?text=Logo" alt="Logo de Esmeralda Earth">
+            <h1>Esmeralda Earth</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#home" class="nav-link">Inicio</a></li>
+                <li><a href="#about" class="nav-link">Sobre Nosotros</a></li>
+                <li><a href="#products" class="nav-link">Productos</a></li>
+                <li><a href="#benefits" class="nav-link">Beneficios</a></li>
+                <li><a href="#comments" class="nav-link">Comentarios</a></li>
+                <li><a href="#video" class="nav-link">Video</a></li>
+                <li><a href="#contact" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="home" class="page-section active">
+            <div class="hero">
+                <h2>¡Dile Adiós a los Mosquitos con Breeze Shield!</h2>
+                <p>El repelente natural que protege a tu familia y el medio ambiente, con la frescura de la naturaleza.</p>
+                <img src="C:\Users\LENOVO\Documents\mi_sitio_web_breeze_shield\imagen producto.jpg"/600x350?text=Breeze+Shield+Producto" alt="Breeze Shield Repelente Natural" class="hero-image">
+                <p>Experimenta la tranquilidad y el bienestar que solo los ingredientes puros pueden ofrecerte.</p>
+                <a href="#products" class="btn-primary nav-link">¡Explorar Productos!</a>
+            </div>
+
+            <section class="features">
+                <div class="feature-item">
+                    <h3>🍃 Fórmula 100% Natural</h3>
+                    <p>Elaborado con aceites esenciales puros y extractos de plantas, libre de químicos agresivos y DEET.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>👨‍👩‍👧‍👦 Protección Familiar Total</h3>
+                    <p>Seguro para niños y adultos de todas las edades, ideal para disfrutar sin preocupaciones al aire libre.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>✨ Aroma Refrescante Único</h3>
+                    <p>Disfruta de una fragancia natural a cítricos y hierbas que repele mosquitos y agrada los sentidos.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🌎 Compromiso Ambiental</h3>
+                    <p>Envase biodegradable y producción sostenible, cuidando la salud de tu familia y del planeta.</p>
+                </div>
+            </section>
+
+            <section class="testimonials">
+                <h2>Lo que dicen nuestros clientes</h2>
+                <div class="testimonial-card">
+                    <p>"Breeze Shield ha transformado nuestras salidas al campo. ¡Por fin un repelente que no irrita y que huele de maravilla!"</p>
+                    <span class="author">- Ana G., Madre de dos</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Soy alérgico a muchos repelentes, pero con Breeze Shield, mi piel está feliz y los mosquitos lejos. ¡Altamente recomendado!"</p>
+                    <span class="author">- Carlos M., Aventurero</span>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Compré Breeze Shield por su enfoque natural, y me sorprendió su efectividad. ¡Es mi nuevo imprescindible de verano!"</p>
+                    <span class="author">- Sofía L., Amante de la naturaleza</span>
+                </div>
+            </section>
+        </section>
+
+        <section id="about" class="page-section">
+            <h2>Nuestra Historia y Propósito en Esmeralda Earth</h2>
+            <p>En un pequeño pueblo olvidado por el progreso, un grupo de jóvenes idealistas, encabezado por Jonathan Alberto, un ingeniero ambiental recién graduado, decide enfrentar la crisis climática con una solución local: crear una empresa que transforme residuos orgánicos en productos útiles. Sin apoyo financiero, sin experiencia empresarial y con muchas dudas, nace Esmerald earth, una empresa de reciclaje con enfoque sostenible.
+ 
+La historia sigue su evolución desde un taller improvisado con materiales reutilizados, enfrentando desprecio, escepticismo y la falta de recursos. En su camino, Jonathan recluta a personas clave: Aaron, un diseñador industrial que convierte basura en belleza, Donovan, un contador que renuncia a una vida cómoda por un propósito
+
+A través de los años, Esmeralda Earth sobrevive a crisis económicas, desastres naturales y campañas en contra financiadas por grandes industrias. Pero también logra premios, alianzas internacionales, y sobre todo, transforma comunidades. La empresa crece, innova y educa, sin perder su esencia.
+
+Ahora, con presencia en más de 30 países, siendo modelo de economía circular, Esmeralda Earth quiere contar su historia. No para presumir, sino para inspirar. Para mostrar que un proyecto nacido del compromiso con el planeta y con la gente sí puede cambiar el mundo.</p>
+
+            <div class="about-content">
+                <div class="about-section-block">
+                    <h3>Nuestros Propósitos</h3>
+                    <ul>
+                        <li>Producir soluciones de bienestar 100% naturales, seguras y de alta eficacia.</li>
+                        <li>Fomentar prácticas de consumo conscientes y respetuosas con el planeta.</li>
+                        <li>Innovar constantemente para ofrecer productos que mejoren la calidad de vida sin comprometer la naturaleza.</li>
+                        <li>Construir una comunidad comprometida con la salud y la sostenibilidad.</li>
+                    </ul>
+                </div>
+
+                <div class="about-section-block">
+                    <h3>Nuestro Equipo</h3>
+                    <p>Estamos orgullosos de contar con un equipo apasionado y dedicado, que combina experiencia y visión para llevarte lo mejor de la naturaleza.</p>
+                    <div class="team-grid">
+                        <div class="team-member-card">
+                            <img src="C:\Users\LENOVO\Documents\mi_sitio_web_breeze_shield\jonathan.jpg"/120x120?text=Persona1" alt="Miembro del Equipo 1">
+                            <h4>Jonathan Alberto</h4>
+                            <span class="role">Fundador y Director de Investigación</span>
+                            <p>Con más de 10 años en botánica y formulación de productos naturales, Jonathan lidera nuestra búsqueda de ingredientes puros y efectivos.</p>
+                        </div>
+                        <div class="team-member-card">
+                            <img src="C:\Users\LENOVO\Documents\mi_sitio_web_breeze_shield\aaron.jpg"/120x120?text=Persona2" alt="Miembro del Equipo 2">
+                            <h4>Aaron Josua</h4>
+                            <span class="role">Jefe de Operaciones Sostenibles</span>
+                            <p>Experto en procesos de producción eco-amigables, Aaron asegura que cada paso en la creación de nuestros productos respete el medio ambiente.</p>
+                        </div>
+                        <div class="team-member-card">
+                            <img src="C:\Users\LENOVO\Documents\mi_sitio_web_breeze_shield\donovan.jpg"/120x120?text=Persona3" alt="Miembro del Equipo 3">
+                            <h4>Donovan Alexis</h4>
+                            <span class="role">Director de Experiencia del Cliente</span>
+                            <p>Donovan es la voz de nuestros clientes, garantizando que cada experiencia con Esmeralda Earth sea excepcional y satisfactoria.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="page-section">
+            <h2>Nuestros Productos: Innovación Natural para tu Bienestar</h2>
+            <p>En Esmeralda Earth, nos enfocamos en ofrecer soluciones naturales y efectivas para tu bienestar. Nuestro producto estrella, Breeze Shield, es la manifestación de este compromiso con la calidad y la naturaleza.</p>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="C:\Users\LENOVO\Documents\mi_sitio_web_breeze_shield\producto online.jpg"/300x220?text=Breeze+Shield+Spray" alt="Breeze Shield Spray Original">
+                    <h3>Breeze Shield - Spray Repelente Natural</h3>
+                    <div class="price">$40 MXN</div>
+                    <p class="description">Nuestro repelente de mosquitos 100% natural, formulado con aceites esenciales puros como aceite esencial de eucalipto. Protección eficaz y duradera para toda la familia, con un aroma refrescante y agradable. ¡Dile adiós a las picaduras sin químicos agresivos!</p>
+                    <a href="#" class="btn-add-to-cart">Añadir al Carrito</a>
+                </div>
+                </div>
+            <p style="margin-top: 40px;">Descubre la tranquilidad de un ambiente libre de mosquitos, de forma natural y segura.</p>
+        </section>
+
+        <section id="benefits" class="page-section">
+            <h2>Los Incomparables Beneficios de Breeze Shield</h2>
+            <p>Breeze Shield no es solo un repelente de mosquitos; es una elección de vida que te ofrece una protección superior mientras cuidas de ti y del planeta. Descubre por qué miles de familias ya confían en nuestra fórmula natural.</p>
+
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <img src="C:\Users\LENOVO\Documents\mi_sitio_web_breeze_shield\ecologia.jpg"/70x70?text=🌱" alt="Ícono Ecología">
+                    <h3>Sostenibilidad y Respeto Ambiental</h3>
+                    <p>Fabricado con ingredientes de origen responsable y envasado en materiales reciclables y biodegradables, reduciendo tu huella de carbono.</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="C:\Users\LENOVO\Documents\mi_sitio_web_breeze_shield\seguro.jpg"/70x70?text=👨‍👩‍👧‍👦" alt="Ícono Seguro">
+                    <h3>Seguro para Todas las Edades</h3>
+                    <p>Nuestra fórmula hipoalergénica y libre de DEET es perfecta para bebés, niños pequeños y adultos con piel sensible.</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="C:\Users\LENOVO\Documents\mi_sitio_web_breeze_shield\eficaz.jpg"/70x70?text=✅" alt="Ícono Eficaz">
+                    <h3>Protección Duradera y Eficaz</h3>
+                    <p>Disfruta de horas de libertad al aire libre sin preocuparte por las picaduras, gracias a la eficacia probada de nuestros ingredientes naturales.</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="C:\Users\LENOVO\Documents\mi_sitio_web_breeze_shield\aroma.jpg"/70x70?text=🌸" alt="Ícono Aroma">
+                    <h3>Aroma Agradable y Natural</h3>
+                    <p>Olvídate del olor fuerte y químico de otros repelentes. Breeze Shield te envuelve en una fragancia fresca y natural.</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="C:\Users\LENOVO\Documents\mi_sitio_web_breeze_shield\no residuo.jpg"/70x70?text=💧" alt="Ícono No Residuo">
+                    <h3>Sin Residuos Pegajosos</h3>
+                    <p>Su fórmula ligera se absorbe rápidamente, dejando tu piel suave y sin sensación pegajosa o aceitosa.</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="C:\Users\LENOVO\Documents\mi_sitio_web_breeze_shield\versatil.jpg"/70x70?text=🗺️" alt="Ícono Versátil">
+                    <h3>Versátil para Cualquier Actividad</h3>
+                    <p>Ideal para senderismo, camping, picnics, noches en el patio o simplemente para relajarte en casa.</p>
+                </div>
+            </div>
+            <p style="margin-top: 40px;">Elige Breeze Shield y experimenta la tranquilidad de estar protegido por la naturaleza.</p>
+        </section>
+
+        <section id="comments" class="page-section">
+            <h2>Comparte tu Experiencia con Breeze Shield</h2>
+            <p>¡Tu opinión es muy valiosa para nosotros y para la comunidad! Deja tu comentario y ayuda a otros a descubrir los beneficios de nuestro repelente natural.</p>
+
+            <form class="comment-form" id="comment-form">
+                <label for="comment-author">Tu Nombre:</label>
+                <input type="text" id="comment-author" name="comment-author" required placeholder="Ej. Ana G.">
+
+                <label for="comment-text">Tu Comentario:</label>
+                <textarea id="comment-text" name="comment-text" required placeholder="Escribe aquí tu opinión sobre Breeze Shield..."></textarea>
+
+                <button type="submit">Enviar Comentario</button>
+            </form>
+
+            <div class="comments-list" id="comments-list">
+                <h3>Comentarios Recientes de Clientes:</h3>
+                </div>
+            <p style="font-size: 0.9em; margin-top: 20px;">Todos los comentarios son revisados antes de ser publicados para mantener nuestra comunidad segura y positiva.</p>
+        </section>
+
+        <section id="video" class="page-section">
+            <h2>Descubre Breeze Shield en Video</h2>
+            <p>Mira nuestro video promocional y conoce de cerca por qué Breeze Shield es la mejor opción natural para protegerte a ti y a tu familia.</p>
+            <div class="video-container">
+                <iframe src="C:\Users\LENOVO\Documents\mi_sitio_web_breeze_shield\Breeze_Shield_Spray_V1.mp4" 
+                        title="Video promocional de Breeze Shield" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen></iframe>
+            </div>
+            <p style="margin-top: 20px;">¡Sumérgete en la frescura y la protección que solo la naturaleza puede ofrecerte!</p>
+        </section>
+
+        <section id="contact" class="page-section">
+            <h2>Contáctanos - ¡Estamos Aquí para Ayudarte!</h2>
+            <p>En Esmeralda Earth, valoramos tus preguntas, comentarios y sugerencias. No dudes en ponerte en contacto con nosotros a través de los siguientes medios:</p>
+
+            <div class="contact-info">
+                <p><strong>Correo Electrónico:</strong> <a href="mailto:moaj090926hplrvna3@soycecytem.mx">moaj090926hplrvna3@soycecytem.mx</a></p>
+                <p><strong>Teléfono:</strong> <a href="tel:+525651502726">+52 56 5150 2726</a></p>
+                <p><strong>Horario de Atención:</strong> Lunes a Viernes, de 9:00 AM a 6:00 PM (Hora de México Central)</p>
+                <p><strong>Dirección:</strong> Av. Bordo de Xochiaca, S/N entre Av. Adolfo López Mateos y Sor Juana, Col. Benito Juárez, Estado de México, C.P. 57000</p>
+            </div>
+
+            <p style="margin-top: 30px;">Si prefieres, también puedes enviarnos un mensaje directamente a través de nuestro formulario de contacto:</p>
+
+            <form class="contact-form" action="#" method="POST">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre-contact" name="nombre" required placeholder="Tu nombre completo">
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email-contact" name="email" required placeholder="tu.email@ejemplo.com">
+
+                <label for="asunto">Asunto:</label>
+                <input type="text" id="asunto-contact" name="asunto" placeholder="Motivo de tu mensaje">
+
+                <label for="mensaje">Tu Mensaje:</label>
+                <textarea id="mensaje-contact" name="mensaje" required placeholder="Escribe aquí tu mensaje..."></textarea>
+
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+            <p style="font-size: 0.9em; margin-top: 20px;">Nos pondremos en contacto contigo lo antes posible para atender tu consulta.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Esmeralda Earth. Todos los derechos reservados.</p>
+        <p>Hecho con 💚 por la naturaleza.</p>
+    </footer>
+
+    <div class="social-icons-fixed" id="social-icons-fixed">
+        <a href="https://www.facebook.com/jonathan.art.425533" target="_blank" aria-label="Facebook" class="social-icon-link">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/moran_aviles/" target="_blank" aria-label="Instagram" class="social-icon-link">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/525651502726" target="_blank" aria-label="WhatsApp" class="social-icon-link">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pageSections = document.querySelectorAll('.page-section');
+            const commentForm = document.getElementById('comment-form');
+            const commentsList = document.getElementById('comments-list');
+            const socialIconsFixed = document.getElementById('social-icons-fixed');
+
+            // Función para mostrar la sección correcta y añadir/quitar clases de animación
+            function showPage(pageId) {
+                // Elimina la clase 'active' y de animación de todas las secciones
+                pageSections.forEach(section => {
+                    section.classList.remove('active');
+                    section.classList.remove('fade-in'); // Por si acaso
+                });
+
+                // Añade la clase 'active' y de animación a la sección deseada
+                const targetSection = document.getElementById(pageId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                    // Forzar reflow para que la animación se reinicie
+                    void targetSection.offsetWidth; 
+                    targetSection.classList.add('fade-in'); // Activa la animación
+
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    history.pushState(null, '', `#${pageId}`);
+                }
+            }
+
+            // Manejar clics en los enlaces del menú y el botón "Comprar Ahora"
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    showPage(targetId);
+                });
+            });
+
+            // Manejar el botón "Explorar Productos" de la sección hero (si cambia el texto)
+            const heroBuyButton = document.querySelector('.hero .btn-primary');
+            if (heroBuyButton) {
+                heroBuyButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    showPage('products');
+                });
+            }
+
+            // Manejar la carga inicial de la página o cuando se usa el botón de retroceso/adelante del navegador
+            function handleInitialLoadAndPopState() {
+                const currentHash = window.location.hash ? window.location.hash.substring(1) : 'home';
+                if (document.getElementById(currentHash)) {
+                    showPage(currentHash);
+                } else {
+                    showPage('home'); // Si el hash no existe, va a inicio
+                }
+            }
+
+            handleInitialLoadAndPopState();
+            window.addEventListener('popstate', handleInitialLoadAndPopState);
+
+            // --- Funcionalidad de Comentarios ---
+
+            function loadComments() {
+                const comments = JSON.parse(localStorage.getItem('breezeShieldComments')) || [];
+                commentsList.innerHTML = '<h3>Comentarios Recientes de Clientes:</h3>';
+                if (comments.length === 0) {
+                    const noCommentsMsg = document.createElement('p');
+                    noCommentsMsg.textContent = 'Aún no hay comentarios. ¡Sé el primero en dejar uno!';
+                    commentsList.appendChild(noCommentsMsg);
+                } else {
+                    comments.forEach(comment => {
+                        const commentCard = document.createElement('div');
+                        commentCard.classList.add('comment-card');
+                        commentCard.innerHTML = `
+                            <div class="comment-author">${comment.author}</div>
+                            <div class="comment-text">${comment.text}</div>
+                        `;
+                        commentsList.appendChild(commentCard);
+                    });
+                }
+            }
+
+            commentForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const authorInput = document.getElementById('comment-author');
+                const textInput = document.getElementById('comment-text');
+
+                const newComment = {
+                    author: authorInput.value,
+                    text: textInput.value,
+                    date: new Date().toISOString()
+                };
+
+                const comments = JSON.parse(localStorage.getItem('breezeShieldComments')) || [];
+                comments.push(newComment);
+                localStorage.setItem('breezeShieldComments', JSON.stringify(comments));
+
+                authorInput.value = '';
+                textInput.value = '';
+
+                loadComments();
+            });
+
+            loadComments();
+
+            // --- Control de visibilidad de iconos de redes sociales al hacer scroll ---
+            let lastScrollTop = 0;
+            window.addEventListener('scroll', function() {
+                let st = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (st > lastScrollTop && st > 200) { // Scroll hacia abajo y no al inicio
+                    socialIconsFixed.classList.remove('show');
+                } else if (st < lastScrollTop || st < 200) { // Scroll hacia arriba o cerca del inicio
+                    socialIconsFixed.classList.add('show');
+                }
+                lastScrollTop = st <= 0 ? 0 : st; // Para manejar el rebote en iOS/Android
+            });
+
+            // Mostrar iconos al cargar la página si no se ha hecho scroll
+            if (window.pageYOffset < 200) {
+                socialIconsFixed.classList.add('show');
+            }
+        });
+    </script>
+
+</body>
+</html>
